@@ -76,12 +76,12 @@ function HexCell({ cell, delay, show }: { cell: CellData; delay: number; show: b
         {/* border ring */}
         <div
           className="absolute inset-0"
-          style={{ clipPath: CLIP, background: "linear-gradient(135deg,#1fb8e550,#f6b11b40)" }}
+          style={{ clipPath: CLIP, background: "linear-gradient(135deg,#1fb8e580,#f6b11b70)" }}
         />
         {/* image */}
         <div className="absolute inset-[3px] overflow-hidden" style={{ clipPath: CLIP }}>
           <Image src={cell.src} alt={cell.alt} fill className="object-cover" sizes={`${W}px`} />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10" />
         </div>
       </motion.div>
     );
@@ -91,8 +91,8 @@ function HexCell({ cell, delay, show }: { cell: CellData; delay: number; show: b
     <motion.div {...baseAnim} className="group relative flex-shrink-0" style={{ width: W, height: H }}>
       {/* outer glow ring */}
       <div
-        className="absolute inset-0 opacity-50 transition-opacity duration-300 group-hover:opacity-100"
-        style={{ clipPath: CLIP, background: `${cell.accent}28` }}
+        className="absolute inset-0 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+        style={{ clipPath: CLIP, background: `${cell.accent}55` }}
       />
       {/* inner fill */}
       <div
@@ -100,23 +100,23 @@ function HexCell({ cell, delay, show }: { cell: CellData; delay: number; show: b
         style={{
           clipPath: CLIP,
           background: "#ffffff",
-          boxShadow: "inset 0 0 0 1px rgba(15, 23, 42, 0.08)",
+          boxShadow: "inset 0 0 0 1.5px rgba(15, 23, 42, 0.12)",
         }}
       />
       {/* hover colour wash */}
       <div
         className="absolute inset-[2px] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{ clipPath: CLIP, background: `${cell.accent}14` }}
+        style={{ clipPath: CLIP, background: `${cell.accent}1F` }}
       />
       {/* content */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-7 text-center">
-        <span className="mb-1 text-[10px] font-black opacity-40" style={{ color: cell.accent }}>
+        <span className="mb-1 text-[11px] font-black opacity-100" style={{ color: cell.accent }}>
           {cell.num}
         </span>
         <span className="mb-2 text-[13px] font-bold leading-snug text-slate-950">
           {cell.title}
         </span>
-        <span className="text-[10px] font-light leading-snug text-slate-500">
+        <span className="text-[10px] font-medium leading-snug text-slate-600">
           {cell.desc}
         </span>
         <span className="mt-3 block h-[2px] w-6 rounded-full" style={{ background: cell.accent }} />

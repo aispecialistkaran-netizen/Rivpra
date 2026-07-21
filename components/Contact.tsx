@@ -24,6 +24,42 @@ const contactInfo: ContactInfoItem[] = [
     color: "#f6b11b",
   },
   {
+    label: "Domestic Inquiries & Sales Support",
+    value: (
+      <div className="space-y-1">
+        <div>
+          <span className="text-slate-400 font-normal">Mob:</span>{" "}
+          <a href="tel:+918800394441" className="hover:text-[#1fb8e5] transition-colors">8800394441</a> /{" "}
+          <a href="tel:+918510881144" className="hover:text-[#1fb8e5] transition-colors">8510881144</a>
+        </div>
+        <div>
+          <span className="text-slate-400 font-normal">Email:</span>{" "}
+          <a href="mailto:sales@rivpraformulation.com" className="hover:text-[#1fb8e5] transition-colors">sales@rivpraformulation.com</a>
+        </div>
+      </div>
+    ),
+    type: "phone",
+    color: "#1fb8e5",
+  },
+  {
+    label: "International Inquiries & Sales Support",
+    value: (
+      <div className="space-y-1">
+        <div>
+          <span className="text-slate-400 font-normal">Mob:</span>{" "}
+          <a href="tel:+919718540207" className="hover:text-[#1fb8e5] transition-colors">9718540207</a> /{" "}
+          <a href="tel:+919311400851" className="hover:text-[#1fb8e5] transition-colors">9311400851</a>
+        </div>
+        <div>
+          <span className="text-slate-400 font-normal">Email:</span>{" "}
+          <a href="mailto:bd@rivpraformulation.com" className="hover:text-[#1fb8e5] transition-colors">bd@rivpraformulation.com</a>
+        </div>
+      </div>
+    ),
+    type: "phone",
+    color: "#f6b11b",
+  },
+  {
     label: "Reception",
     value: (
       <div className="space-y-1">
@@ -63,6 +99,14 @@ const contactInfo: ContactInfoItem[] = [
     label: "Email Channels",
     value: (
       <div className="space-y-1">
+        <div>
+          <span className="text-slate-400 font-normal text-xs uppercase tracking-wide block sm:inline mr-1">Domestic Sales:</span>
+          <a href="mailto:sales@rivpraformulation.com" className="hover:text-[#1fb8e5] transition-colors">sales@rivpraformulation.com</a>
+        </div>
+        <div>
+          <span className="text-slate-400 font-normal text-xs uppercase tracking-wide block sm:inline mr-1">International Sales / BD:</span>
+          <a href="mailto:bd@rivpraformulation.com" className="hover:text-[#1fb8e5] transition-colors">bd@rivpraformulation.com</a>
+        </div>
         <div>
           <span className="text-slate-400 font-normal text-xs uppercase tracking-wide block sm:inline mr-1">API Purchase:</span>
           <a href="mailto:sujata@rivpraformulation.com" className="hover:text-[#1fb8e5] transition-colors">sujata@rivpraformulation.com</a>
@@ -195,81 +239,82 @@ export default function Contact() {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
-          <span className="inline-block px-3 py-1 rounded-full border border-[#1fb8e5]/40 bg-[#1fb8e5]/10 text-[#f6b11b] text-xs font-semibold tracking-widest uppercase mb-6">
+          <span className="inline-block px-3 py-1 rounded-full border border-[#1fb8e5]/40 bg-[#1fb8e5]/10 text-[#f6b11b] text-xs font-semibold tracking-widest uppercase mb-4">
             Get In Touch
           </span>
-          <h2 className="text-4xl lg:text-6xl font-black text-slate-950 leading-tight mb-6">
-            Partner With
-            <br />
+          <h2 className="text-4xl lg:text-5xl font-black text-slate-950 leading-tight mb-4">
+            Partner With{" "}
             <span className="text-transparent bg-gradient-to-r from-[#1fb8e5] to-[#f6b11b] bg-clip-text">
               Rivpra Today
             </span>
           </h2>
-          <p className="text-slate-500 max-w-xl mx-auto text-base leading-relaxed font-light">
+          <p className="text-slate-500 max-w-xl mx-auto text-sm lg:text-base leading-relaxed font-light">
             Whether you are looking for contract manufacturing services, product
             licensing or formulation development — we are here to help.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Contact info */}
+        {/* Balanced Grid: 7 cols contact info + 5 cols form */}
+        <div className="grid lg:grid-cols-12 gap-8 items-start">
+          {/* Contact info grid (7 cols) */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="flex flex-col gap-6"
+            className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5"
           >
             {contactInfo.map((info, i) => (
               <motion.div
                 key={info.label}
-                initial={{ opacity: 0, x: -20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.15 * i + 0.2 }}
-                className="flex items-start gap-5 p-5 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 transition-colors duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.1 * i + 0.1 }}
+                className="group flex flex-col justify-between p-4 rounded-2xl border border-slate-200/90 bg-white hover:border-[#1fb8e5]/40 hover:shadow-md transition-all duration-300"
               >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-xl flex-shrink-0"
-                  style={{ background: `${info.color}15` }}
-                >
-                  <ContactIcon type={info.type} />
-                </div>
                 <div>
-                  <div className="text-slate-500 text-xs uppercase tracking-widest mb-1 font-medium">
-                    {info.label}
+                  <div className="flex items-center gap-3 mb-2.5">
+                    <div
+                      className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ background: `${info.color}15` }}
+                    >
+                      <ContactIcon type={info.type} />
+                    </div>
+                    <span className="text-slate-900 font-bold text-xs uppercase tracking-wider">
+                      {info.label}
+                    </span>
                   </div>
-                  <div className="text-slate-700 text-sm font-medium leading-relaxed">
+                  <div className="text-slate-600 text-xs leading-relaxed font-medium pl-0.5">
                     {info.value}
                   </div>
                 </div>
               </motion.div>
             ))}
 
-            {/* Trust note */}
+            {/* Trust note card (takes 1 slot in grid) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-4 p-6 rounded-2xl border border-[#1fb8e5]/20 bg-gradient-to-br from-[#1fb8e5]/8 to-transparent"
+              transition={{ duration: 0.4, delay: 0.7 }}
+              className="flex flex-col justify-center p-4 rounded-2xl border border-[#1fb8e5]/30 bg-gradient-to-br from-[#1fb8e5]/10 via-[#f6b11b]/5 to-transparent"
             >
-              <div className="text-slate-950 font-bold mb-2">
+              <div className="flex items-center gap-2 text-slate-950 font-bold text-xs uppercase tracking-wider mb-1">
+                <span className="w-2 h-2 rounded-full bg-[#1fb8e5]" />
                 Trusted Since 2008
               </div>
-              <div className="text-slate-500 text-sm leading-relaxed">
-                Rivpra Formulations has been a reliable pharmaceutical partner
-                for over 19 years — delivering quality, consistency and value
-                across every product we manufacture.
-              </div>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Over 19 years of pharmaceutical manufacturing excellence, compliance, and global delivery.
+              </p>
             </motion.div>
           </motion.div>
 
-          {/* Form */}
+          {/* Form (5 cols) */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative p-8 rounded-3xl border border-slate-200 bg-white backdrop-blur-sm"
+            className="lg:col-span-5 relative p-6 sm:p-7 rounded-3xl border border-slate-200 bg-white shadow-sm"
           >
             {submitted ? (
               <motion.div
@@ -277,24 +322,24 @@ export default function Contact() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="flex flex-col items-center justify-center h-full py-12 text-center"
               >
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#1fb8e5] to-[#f6b11b] flex items-center justify-center mb-6 shadow-lg">
-                  <svg viewBox="0 0 24 24" className="w-10 h-10 text-slate-950" fill="none" stroke="currentColor" strokeWidth={3}>
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#1fb8e5] to-[#f6b11b] flex items-center justify-center mb-4 shadow-lg">
+                  <svg viewBox="0 0 24 24" className="w-8 h-8 text-slate-950" fill="none" stroke="currentColor" strokeWidth={3}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                 </div>
-                <div className="text-slate-950 font-black text-2xl mb-3">
+                <div className="text-slate-950 font-black text-xl mb-2">
                   Message Sent!
                 </div>
-                <div className="text-slate-500 text-sm max-w-xs">
+                <div className="text-slate-500 text-xs max-w-xs leading-relaxed">
                   Thank you for reaching out to Rivpra Formulations. Our team
                   will get back to you shortly.
                 </div>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                <div className="grid sm:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <div className="grid sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-slate-500 text-xs uppercase tracking-widest mb-2 font-medium">
+                    <label className="block text-slate-500 text-[10px] uppercase tracking-widest mb-1.5 font-semibold">
                       Full Name
                     </label>
                     <input
@@ -304,11 +349,11 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="John Doe"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-950 text-sm placeholder-slate-400 focus:outline-none focus:border-[#1fb8e5]/60 transition-colors duration-200"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-950 text-xs placeholder-slate-400 focus:outline-none focus:border-[#1fb8e5]/60 transition-colors duration-200"
                     />
                   </div>
                   <div>
-                    <label className="block text-slate-500 text-xs uppercase tracking-widest mb-2 font-medium">
+                    <label className="block text-slate-500 text-[10px] uppercase tracking-widest mb-1.5 font-semibold">
                       Email
                     </label>
                     <input
@@ -318,13 +363,13 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="john@company.com"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-950 text-sm placeholder-slate-400 focus:outline-none focus:border-[#1fb8e5]/60 transition-colors duration-200"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-950 text-xs placeholder-slate-400 focus:outline-none focus:border-[#1fb8e5]/60 transition-colors duration-200"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-slate-500 text-xs uppercase tracking-widest mb-2 font-medium">
+                  <label className="block text-slate-500 text-[10px] uppercase tracking-widest mb-1.5 font-semibold">
                     Company Name
                   </label>
                   <input
@@ -333,12 +378,12 @@ export default function Contact() {
                     value={form.company}
                     onChange={handleChange}
                     placeholder="Your Company Ltd."
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-950 text-sm placeholder-slate-400 focus:outline-none focus:border-[#1fb8e5]/60 transition-colors duration-200"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-950 text-xs placeholder-slate-400 focus:outline-none focus:border-[#1fb8e5]/60 transition-colors duration-200"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-slate-500 text-xs uppercase tracking-widest mb-2 font-medium">
+                  <label className="block text-slate-500 text-[10px] uppercase tracking-widest mb-1.5 font-semibold">
                     Area of Interest
                   </label>
                   <select
@@ -346,7 +391,7 @@ export default function Contact() {
                     value={form.interest}
                     onChange={handleChange}
                     required
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-950 text-sm focus:outline-none focus:border-[#1fb8e5]/60 transition-colors duration-200"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-950 text-xs focus:outline-none focus:border-[#1fb8e5]/60 transition-colors duration-200"
                   >
                     <option value="" className="bg-white">
                       Select interest...
@@ -376,7 +421,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-slate-500 text-xs uppercase tracking-widest mb-2 font-medium">
+                  <label className="block text-slate-500 text-[10px] uppercase tracking-widest mb-1.5 font-semibold">
                     Message
                   </label>
                   <textarea
@@ -384,17 +429,17 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     required
-                    rows={4}
+                    rows={3}
                     placeholder="Tell us about your requirements..."
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-950 text-sm placeholder-slate-400 focus:outline-none focus:border-[#1fb8e5]/60 transition-colors duration-200 resize-none"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-950 text-xs placeholder-slate-400 focus:outline-none focus:border-[#1fb8e5]/60 transition-colors duration-200 resize-none"
                   />
                 </div>
 
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#1fb8e5] to-[#f6b11b] text-slate-950 font-bold text-sm tracking-wide hover:shadow-2xl hover:shadow-[#1fb8e5]/30 transition-shadow duration-300"
+                  className="w-full py-3 rounded-xl bg-gradient-to-r from-[#1fb8e5] to-[#f6b11b] text-slate-950 font-bold text-xs tracking-wider uppercase hover:shadow-lg hover:shadow-[#1fb8e5]/20 transition-all duration-300"
                 >
                   Send Message →
                 </motion.button>

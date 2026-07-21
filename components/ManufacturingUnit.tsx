@@ -4,44 +4,6 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 
-const capabilities = [
-  {
-    label: "Tablet Section",
-    value: "374.50 Million Tablets",
-    color: "#1fb8e5",
-  },
-  {
-    label: "Capsule Section",
-    value: "46.80 Million Capsules",
-    color: "#f6b11b",
-  },
-  {
-    label: "Liquid Section",
-    value: "15.60 Million Bottles",
-    color: "#ddd82a",
-  },
-  {
-    label: "Sachet Section",
-    value: "3.12 Million Sachets",
-    color: "#f6b11b",
-  },
-  {
-    label: "Dry Powder Suspension",
-    value: "4.68 Million Bottles",
-    color: "#1fb8e5",
-  },
-  {
-    label: "Tubes Section",
-    value: "5.0 Million Tubes",
-    color: "#f6b11b",
-  },
-  {
-    label: "Lotion Section",
-    value: "1.0 Million Bottles",
-    color: "#ddd82a",
-  },
-];
-
 const images = Array.from(
   { length: 14 },
   (_, i) => `/Unit/infrastructure_${i + 1}.jpg`
@@ -169,34 +131,6 @@ export default function ManufacturingUnit() {
                   <span className="text-sm text-slate-600">{item}</span>
                 </motion.div>
               ))}
-
-              {/* Capacity cards */}
-              <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
-                {capabilities.map((cap, i) => (
-                  <motion.div
-                    key={cap.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.5 + i * 0.07 }}
-                    className="group rounded-xl border border-slate-200 bg-white p-3 transition-all duration-300 hover:border-slate-300 hover:bg-slate-50"
-                  >
-                    {/* accent top bar */}
-                    <div
-                      className="mb-2 h-0.5 w-6 rounded-full"
-                      style={{ background: cap.color }}
-                    />
-                    <div
-                      className="text-base font-black leading-tight"
-                      style={{ color: cap.color }}
-                    >
-                      {cap.value}
-                    </div>
-                    <div className="mt-1 text-[10px] font-medium uppercase tracking-wider text-slate-500">
-                      {cap.label}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
             </div>
           </motion.div>
         </div>

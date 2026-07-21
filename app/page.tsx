@@ -11,6 +11,7 @@ import Services from "@/components/Services";
 import TherapeuticAreas from "@/components/TherapeuticAreas";
 import ManufacturingUnit from "@/components/ManufacturingUnit";
 import Quality from "@/components/Quality";
+import Pharmacovigilance from "@/components/Pharmacovigilance";
 import Exports from "@/components/Exports";
 import Clients from "@/components/Clients";
 import OteriaBrand from "@/components/OteriaBrand";
@@ -23,17 +24,18 @@ export default function Home() {
     <main className="min-h-screen w-full bg-white text-slate-950 pb-20 lg:pb-0">
       <Navbar />
       <Hero />
+      <VisionMission />
       <StatsStrip />
       <Welcome />
       <Innovation />
       <About />
-      <VisionMission />
       <Strengths />
       <DosageForms />
       <Services />
       <TherapeuticAreas />
       <ManufacturingUnit />
       <Quality />
+      <Pharmacovigilance />
       <Exports />
       <Clients />
       <OteriaBrand />
