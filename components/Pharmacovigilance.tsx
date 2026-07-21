@@ -187,8 +187,8 @@ export default function Pharmacovigilance() {
                     </div>
                     <div>
                       <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Helpline / Phone</div>
-                      <a href="tel:+9101204277177" className="text-xs font-bold text-slate-800 hover:text-[#1fb8e5]">
-                        +91-0120-4277177
+                      <a href="tel:+91XXXXXXXXXX" className="text-xs font-bold text-slate-800 hover:text-[#1fb8e5]">
+                        +91-XXXXXXXXXX
                       </a>
                     </div>
                   </div>
