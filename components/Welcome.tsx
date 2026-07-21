@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useMemo } from "react";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Line } from "@react-three/drei";
@@ -210,28 +211,26 @@ export default function Welcome() {
             </motion.a>
           </motion.div>
 
-          {/* ── Right Column — YouTube Embed ── */}
+          {/* ── Right Column — Services Infographic Image ── */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
             className="relative"
           >
-            {/* Glow behind video */}
+            {/* Glow behind image */}
             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-[#1fb8e5]/20 to-[#f6b11b]/10 blur-2xl" />
 
-            {/* Video wrapper — 16:9 */}
-            <div className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-2xl shadow-slate-200/80">
-              {/* corner accent */}
-              <div className="absolute left-0 top-0 h-12 w-12 rounded-br-2xl bg-gradient-to-br from-[#1fb8e5] to-[#f6b11b] opacity-80" />
-
-              <div className="relative aspect-video w-full">
-                <iframe
-                  className="absolute inset-0 h-full w-full"
-                  src="https://www.youtube.com/embed/AHv8a6qmiz8?rel=0&modestbranding=1"
-                  title="Rivpra Formulations"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+            {/* Image wrapper */}
+            <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-3 shadow-2xl shadow-slate-200/80">
+              <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
+                <Image
+                  src="/images1/e8b304ac-7a41-4de0-ad77-2d14abf90403.png"
+                  alt="Rivpra Services"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
                 />
               </div>
             </div>

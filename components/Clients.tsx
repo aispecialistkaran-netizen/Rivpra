@@ -1,51 +1,22 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 
-const row1 = [
-  "Mankind Pharma",
-  "Wockhardt",
-  "Biocon",
-  "Emcure",
-  "Intas",
-  "Wallace",
-  "Truemeds",
-  "Celsius",
-  "J. B. Chemicals",
-  "Themis Medicare",
-  "Concord Biotech",
-  "Entero Healthcare",
-  "Vivaldis",
-  "Austrak",
-  "Wanbury",
-];
-
-const row2 = [
-  "RPG Life Sciences",
-  "Corona Remedies",
-  "Anand Vihari",
-  "Bestead",
-  "Rene Pharma",
-  "Medisch Lifesciences",
-  "Immune Biotech",
-  "MayBritt",
-  "Reepinor",
-  "Rennew Biotech",
-  "Secure Lifescience",
-  "Biovia",
-  "Glasier Wellness",
-  "SynGex",
-  "Saffron",
-];
+// Extracted client logos from PDF Catalogue (pages 46-49)
+const row1Logos = Array.from({ length: 30 }, (_, i) => `/clients/pdf_logos/logo_${i + 1}.png`);
+const row2Logos = Array.from({ length: 30 }, (_, i) => `/clients/pdf_logos/logo_${i + 31}.png`);
+const row3Logos = Array.from({ length: 30 }, (_, i) => `/clients/pdf_logos/logo_${i + 61}.png`);
 
 export default function Clients() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Duplicate arrays to make seamless loops
-  const doubleRow1 = [...row1, ...row1];
-  const doubleRow2 = [...row2, ...row2];
+  // Duplicate arrays to make seamless infinite loops
+  const doubleRow1 = [...row1Logos, ...row1Logos];
+  const doubleRow2 = [...row2Logos, ...row2Logos];
+  const doubleRow3 = [...row3Logos, ...row3Logos];
 
   return (
     <section id="clients" className="relative w-full overflow-hidden bg-white py-12">
@@ -81,7 +52,7 @@ export default function Clients() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-4 text-slate-600 text-base font-light"
           >
-            We manufacture formulations for some of India's most prestigious healthcare and pharmaceutical brands.
+            We manufacture formulations for some of India&apos;s most prestigious healthcare and pharmaceutical brands.
           </motion.p>
         </div>
       </div>
@@ -89,40 +60,72 @@ export default function Clients() {
       {/* Marquee Container */}
       <div className="flex flex-col gap-6 relative max-w-full">
         {/* Row 1 - scrolling left */}
-        <div className="flex overflow-hidden select-none [mask-image:linear-gradient(to_right,parent,white_10%,white_90%,transparent)] md:[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
+        <div className="flex overflow-hidden select-none [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ ease: "linear", duration: 30, repeat: Infinity }}
+            transition={{ ease: "linear", duration: 40, repeat: Infinity }}
             className="flex gap-4 whitespace-nowrap min-w-full"
           >
-            {doubleRow1.map((client, idx) => (
+            {doubleRow1.map((src, idx) => (
               <div
-                key={`${client}-${idx}`}
-                className="group relative flex items-center justify-center px-8 py-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-[#1fb8e5]/40 hover:bg-white hover:shadow-sm cursor-default transition-all duration-300"
+                key={`r1-${src}-${idx}`}
+                className="group relative flex items-center justify-center p-4 bg-slate-50 border border-slate-200/80 rounded-2xl hover:border-[#1fb8e5]/40 hover:bg-white hover:shadow-md cursor-default transition-all duration-300 w-48 h-24 flex-shrink-0"
               >
-                <span className="text-slate-500 font-extrabold text-sm tracking-wide group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#1fb8e5] group-hover:to-[#f6b11b] group-hover:bg-clip-text transition-colors duration-300">
-                  {client}
-                </span>
+                <Image
+                  src={src}
+                  alt={`Client logo ${idx + 1}`}
+                  width={150}
+                  height={65}
+                  className="object-contain max-h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+                />
               </div>
             ))}
           </motion.div>
         </div>
 
         {/* Row 2 - scrolling right */}
-        <div className="flex overflow-hidden select-none [mask-image:linear-gradient(to_right,parent,white_10%,white_90%,transparent)] md:[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
+        <div className="flex overflow-hidden select-none [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
           <motion.div
             animate={{ x: ["-50%", "0%"] }}
-            transition={{ ease: "linear", duration: 35, repeat: Infinity }}
+            transition={{ ease: "linear", duration: 45, repeat: Infinity }}
             className="flex gap-4 whitespace-nowrap min-w-full"
           >
-            {doubleRow2.map((client, idx) => (
+            {doubleRow2.map((src, idx) => (
               <div
-                key={`${client}-${idx}`}
-                className="group relative flex items-center justify-center px-8 py-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-[#f6b11b]/40 hover:bg-white hover:shadow-sm cursor-default transition-all duration-300"
+                key={`r2-${src}-${idx}`}
+                className="group relative flex items-center justify-center p-4 bg-slate-50 border border-slate-200/80 rounded-2xl hover:border-[#f6b11b]/40 hover:bg-white hover:shadow-md cursor-default transition-all duration-300 w-48 h-24 flex-shrink-0"
               >
-                <span className="text-slate-500 font-extrabold text-sm tracking-wide group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#f6b11b] group-hover:to-[#ddd82a] group-hover:bg-clip-text transition-colors duration-300">
-                  {client}
-                </span>
+                <Image
+                  src={src}
+                  alt={`Client logo ${idx + 31}`}
+                  width={150}
+                  height={65}
+                  className="object-contain max-h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Row 3 - scrolling left */}
+        <div className="flex overflow-hidden select-none [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ ease: "linear", duration: 38, repeat: Infinity }}
+            className="flex gap-4 whitespace-nowrap min-w-full"
+          >
+            {doubleRow3.map((src, idx) => (
+              <div
+                key={`r3-${src}-${idx}`}
+                className="group relative flex items-center justify-center p-4 bg-slate-50 border border-slate-200/80 rounded-2xl hover:border-[#1fb8e5]/40 hover:bg-white hover:shadow-md cursor-default transition-all duration-300 w-48 h-24 flex-shrink-0"
+              >
+                <Image
+                  src={src}
+                  alt={`Client logo ${idx + 61}`}
+                  width={150}
+                  height={65}
+                  className="object-contain max-h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+                />
               </div>
             ))}
           </motion.div>
