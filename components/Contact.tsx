@@ -43,7 +43,7 @@ const contactInfo: ContactInfoItem[] = [
     color: "#ddd82a",
   },
   {
-    label: "Business Development",
+    label: "Business Development & Support",
     value: (
       <div className="space-y-1">
         <div>
