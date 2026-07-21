@@ -28,6 +28,7 @@ export default function Home() {
       <StatsStrip />
       <Welcome />
       <Innovation />
+      <Pharmacovigilance />
       <About />
       <Strengths />
       <DosageForms />
@@ -35,7 +36,6 @@ export default function Home() {
       <TherapeuticAreas />
       <ManufacturingUnit />
       <Quality />
-      <Pharmacovigilance />
       <Exports />
       <Clients />
       <OteriaBrand />
