@@ -133,13 +133,13 @@ export default function Pharmacovigilance() {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-[#f6b11b]/30 bg-gradient-to-br from-[#f6b11b]/10 via-white to-[#1fb8e5]/10 p-7 sm:p-9 shadow-sm"
+            className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-[#f6b11b]/30 bg-gradient-to-br from-[#f6b11b]/10 via-white to-[#1fb8e5]/10 p-7 sm:p-9 shadow-sm gap-6"
           >
-            <div>
-              <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f6b11b]/20 text-[#f6b11b]">
+            <div className="space-y-5">
+              {/* Header */}
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#f6b11b]/20 text-[#f6b11b] shadow-xs">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l- another" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                   </svg>
@@ -154,21 +154,23 @@ export default function Pharmacovigilance() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-xs">
-                <div className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-4 pb-2 border-b border-slate-100">
-                  Rivpra Formulation Pvt. Ltd.
+              {/* Main Contact Card */}
+              <div className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs">
+                <div className="text-[11px] font-bold text-slate-900 uppercase tracking-widest mb-3.5 pb-2 border-b border-slate-100 flex items-center justify-between">
+                  <span>Rivpra Formulation Pvt. Ltd.</span>
+                  <span className="h-2 w-2 rounded-full bg-[#1fb8e5]" />
                 </div>
 
                 <div className="space-y-4">
                   {/* Email */}
                   <div className="flex items-start gap-3">
-                    <div className="mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-[#1fb8e5]/10 text-[#1fb8e5]">
+                    <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-[#1fb8e5]/10 text-[#1fb8e5]">
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                       </svg>
                     </div>
                     <div>
-                      <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Email</div>
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Email Address</div>
                       <a
                         href="mailto:pharmacovigilance@rivpraformulation.com"
                         className="text-xs font-bold text-[#1fb8e5] hover:underline break-all"
@@ -180,13 +182,13 @@ export default function Pharmacovigilance() {
 
                   {/* Phone */}
                   <div className="flex items-start gap-3">
-                    <div className="mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-[#f6b11b]/10 text-[#f6b11b]">
+                    <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-[#f6b11b]/10 text-[#f6b11b]">
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                       </svg>
                     </div>
                     <div>
-                      <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Helpline / Phone</div>
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Helpline / Direct Line</div>
                       <a href="tel:+91XXXXXXXXXX" className="text-xs font-bold text-slate-800 hover:text-[#1fb8e5]">
                         +91-XXXXXXXXXX
                       </a>
@@ -194,19 +196,43 @@ export default function Pharmacovigilance() {
                   </div>
                 </div>
               </div>
+
+              {/* Safety & Compliance Badges Card */}
+              <div className="rounded-2xl border border-slate-200/80 bg-white/80 p-4">
+                <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2.5">
+                  Regulatory Compliance &amp; Standards
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
+                    <svg className="w-4 h-4 text-[#1fb8e5] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Good Pharmacovigilance Practices (GVP)</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
+                    <svg className="w-4 h-4 text-[#1fb8e5] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>CDSCO &amp; National Safety Guidelines</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Adverse event report note */}
-            <div className="mt-6 rounded-2xl border border-slate-200/80 bg-white p-4 text-center">
-              <span className="text-[11px] font-medium text-slate-500 block mb-2">
-                Have a product safety inquiry or adverse event to report?
+            {/* Active Safety Status Bar */}
+            <div className="rounded-2xl border border-emerald-500/20 bg-emerald-50/60 p-3.5 flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span className="text-xs font-bold text-emerald-950">
+                  Continuous Safety Monitoring Active
+                </span>
+              </div>
+              <span className="text-[10px] font-semibold text-emerald-700 bg-white/80 px-2 py-0.5 rounded-full border border-emerald-200">
+                24/7 GVP
               </span>
-              <a
-                href="mailto:pharmacovigilance@rivpraformulation.com"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#1fb8e5] to-[#f6b11b] px-4 py-2.5 text-xs font-bold text-slate-950 transition-all hover:shadow-md"
-              >
-                Report Adverse Event →
-              </a>
             </div>
           </motion.div>
         </div>

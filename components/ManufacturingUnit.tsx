@@ -83,20 +83,6 @@ export default function ManufacturingUnit() {
               implement high-quality systems across our manufacturing facilities
               thus ensuring consistent quality and efficacy of our products.
             </p>
-
-            {/* Badge row */}
-            <div className="flex flex-wrap gap-3 pt-2">
-              {["WHO-cGMP", "GMP Certified", "ISO 9001:2015", "SIDCUL Haridwar", "In-House Testing"].map(
-                (b) => (
-                  <span
-                    key={b}
-                    className="rounded-full border border-slate-200 bg-slate-50 px-4 py-1.5 text-xs font-medium text-slate-600"
-                  >
-                    {b}
-                  </span>
-                )
-              )}
-            </div>
           </motion.div>
 
           {/* Right — capabilities */}
@@ -106,10 +92,7 @@ export default function ManufacturingUnit() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <h3 className="mb-6 text-lg font-bold text-slate-950">
-              Our Capabilities{" "}
-              <span className="text-xs font-normal text-slate-500">
-                (per shift per annum)
-              </span>
+              Our Capabilities
             </h3>
 
             {/* Capability rows */}
@@ -131,6 +114,23 @@ export default function ManufacturingUnit() {
                   <span className="text-sm text-slate-600">{item}</span>
                 </motion.div>
               ))}
+            </div>
+
+            {/* Capsules under capabilities */}
+            <div className="mt-6 flex flex-wrap gap-2.5 pt-4 border-t border-slate-100">
+              {["WHO-cGMP", "GMP Certified", "ISO 9001:2015", "SIDCUL Haridwar", "In-House Testing"].map(
+                (b, i) => (
+                  <motion.span
+                    key={b}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.3, delay: 0.5 + i * 0.05 }}
+                    className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-semibold text-slate-700 shadow-xs hover:border-[#1fb8e5]/40 hover:bg-white hover:text-[#1fb8e5] transition-all"
+                  >
+                    {b}
+                  </motion.span>
+                )
+              )}
             </div>
           </motion.div>
         </div>

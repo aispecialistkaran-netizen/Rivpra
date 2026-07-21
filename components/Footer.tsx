@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const footerLinks = {
-  Company: ["About Us", "Services", "Manufacturing", "Quality", "Our Clients", "Careers", "Media Gallery"],
+  Company: ["About Us", "Services", "Manufacturing", "Quality", "Pharmacovigilance", "Our Clients", "Careers", "Media Gallery"],
   Products: ["Tablets & Capsules", "Syrups & Sachets", "Nutraceuticals", "Cosmetics", "Oteria Skincare"],
   Services: ["Contract Manufacturing", "Formulation Development", "Licensing", "Generic Supply"],
 };
@@ -14,6 +14,7 @@ const anchorMap: Record<string, string> = {
   "Services": "#services",
   "Manufacturing": "#manufacturing",
   "Quality": "#quality",
+  "Pharmacovigilance": "#pharmacovigilance",
   "Our Clients": "#clients",
   "Careers": "/careers",
   "Media Gallery": "/gallery",

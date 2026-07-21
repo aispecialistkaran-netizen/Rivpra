@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Manufacturing", href: "#manufacturing" },
   { label: "Quality", href: "#quality" },
+  { label: "Pharmacovigilance", href: "#pharmacovigilance" },
   { label: "Markets", href: "#markets" },
   { label: "Media", href: "/gallery" },
   { label: "Careers", href: "/careers" },
